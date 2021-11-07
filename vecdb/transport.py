@@ -11,7 +11,7 @@ from .errors import APIError
 
 
 class Transport:
-    """Base class for all relevanceai objects"""
+    """Base class for all VecDB objects"""
 
     project: str
     api_key: str

@@ -1,27 +1,28 @@
-# relevanceai Python SDK 
+# VecDB Python SDK 
 
 For documentation about how to use this package, visit: https://docs.relevance.ai/docs
 
-This is the Python SDK of relevanceai and is the main Pythonic interface for the relevanceai.
+
+This is the Python SDK of VecDB and is the main Pythonic interface for the VecDB.
 
 Built mainly for users looking to experiment with vectors/embeddings without having to consistently rely on the `requests` module.
 
 ## Installation 
 
-The easiest way is to install this package is to run `pip install --upgrade relevanceai`.
+The easiest way is to install this package is to run `pip install --upgrade vecdb`.
 
-## How to use the relevanceai client
+## How to use the VecDB client
 
-For the relevanceai client, we want to ensure the SDK mirrors the API client.
+For the VecDB client, we want to ensure the SDK mirrors the API client.
 
 For example:
 
 ```python
 ## To instantiate the client 
-from relevanceai import Client
+from vecdb import VecDBClient
 project = input("Your project goes here")
 api_key = input("Your API key goes here")
-client = Client(project, api_key)
+client = VecDBClient(project, api_key)
 ```
 
 To use the following endpoint: 
@@ -49,7 +50,7 @@ client.services.search.vector(...)
 
 ### Out of the box multi-threading/multi-processing
 
-Get multi-threading and multi-processing out of the box. The relevanceai Python package automatically gives you multi-threading and multi-processing out of the box!
+Get multi-threading and multi-processing out of the box. The VecDB Python package automatically gives you multi-threading and multi-processing out of the box!
 
 ```python
 
@@ -170,13 +171,13 @@ Sometimes Pull Update Push will fail for strange reasons (create a Github Issue!
 If this is the case, then you are free to use this: 
 
 ```python
-from relevanceai import Client
+from vecdb import VecDBClient
 url = "https://api-aueast.relevance.ai/v1/"
 
 collection = ""
 project = ""
 api_key = ""
-client = Client(project, api_key)
+client = VecDBClient(project, api_key)
 docs = client.datasets.documents.get_where(collection, select_fields=['title'])
 while len(docs['documents']) > 0:
     docs['documents'] = model.encode_documents_in_bulk(['product_name'], docs['documents'])
@@ -200,7 +201,7 @@ If you require a sample dataset, you can run the following to help:
 
 
 ```python
-from relevanceai.datasets import get_ecommerce_dataset
+from vecdb.datasets import get_ecommerce_dataset
 docs = get_ecommerce_dataset()
 ```
 

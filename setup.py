@@ -38,11 +38,11 @@ dev_requirements = [
 ]
 
 setup(
-    name="RelevanceAI",
-    version=get_version("relevanceai/__init__.py"),
+    name="VecDB",
+    version=get_version("vecdb/__init__.py"),
     url="",
     author="Relevance AI",
-    author_email="dev@relevance.ai",
+    author_email="dev@vctr.ai",
     long_description="",
     packages=find_packages(),
     install_requires=requirements,
