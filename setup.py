@@ -49,8 +49,7 @@ test_requirements =[
   + vis_requirements
 
 dev_requirements = [
-    "autopep8",
-    "pylint",
+    "mypy",
     "jupyter",
     "sphinx-rtd-theme>=0.5.0"
 ] + test_requirements
