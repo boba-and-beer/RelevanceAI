@@ -28,30 +28,31 @@ requirements = [
     "numpy>=1.19.0",
 ]
 
-excel_requirements = [
-    "openpyxl>=3.0.9", 
-    "fsspec>=2021.10.1"
-]
+excel_requirements = ["openpyxl>=3.0.9", "fsspec>=2021.10.1"]
 
 vis_requirements = [
     "scikit-learn==0.22",
     "plotly>=5.3.1",
     "typing-extensions",
-    "typeguard"
+    "typeguard",
 ]
 
-test_requirements =[
-    "pytest",
-    "pytest-dotenv",
-    "pytest-cov",
-    "pytest-mock",
-] + excel_requirements \
-  + vis_requirements
+test_requirements = (
+    [
+        "pytest",
+        "pytest-dotenv",
+        "pytest-cov",
+        "pytest-mock",
+    ]
+    + excel_requirements
+    + vis_requirements
+)
 
 dev_requirements = [
     "mypy",
     "jupyter",
-    "sphinx-rtd-theme>=0.5.0"
+    "sphinx-rtd-theme>=0.5.0",
+    "pre-commit",
 ] + test_requirements
 
 
@@ -59,7 +60,6 @@ setup(
     name="RelevanceAI",
     version=get_version("relevanceai/__init__.py"),
     url="https://relevance.ai/",
-    
     author="Relevance AI",
     author_email="dev@relevance.ai",
     long_description="",
@@ -77,7 +77,7 @@ setup(
         "vis": vis_requirements,
         "tests": test_requirements,
         "notebook": ["jsonshower"] + vis_requirements,
-        "ivis": ["ivis[gpu]>=2.0.6"]
+        "ivis": ["ivis[gpu]>=2.0.6"],
     },
     python_requires=">=3.6",
     classifiers=[],
