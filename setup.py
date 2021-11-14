@@ -53,6 +53,7 @@ dev_requirements = [
     "jupyter",
     "sphinx-rtd-theme>=0.5.0",
     "pre-commit",
+    "black",
 ] + test_requirements
 
 
