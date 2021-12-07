@@ -26,3 +26,6 @@ def image_callbacks(app):
             src='data:image/png;base64, ' + image_b64,
             style={'height': '25vh', 'display': 'block', 'margin': 'auto'},
         )
+
+def test_change():
+    return None
